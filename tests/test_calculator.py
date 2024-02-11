@@ -20,3 +20,4 @@ def test_divide():
 def test_remainder():
     '''Test if remainder works '''    
     assert remainder(2,2) == 0
+    
