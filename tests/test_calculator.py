@@ -1,23 +1,20 @@
-'''Testing Calculator'''
-from calculator import add, subtract, multiply, divide, remainder
+"""Calculator Testing
+This file tests if calculator.__init__.py works properly, one layer above operations
+Tests if my Calculator item is calling and operating the correct functions when called"""
+from calculator import Calculator
 
 def test_addition():
-    '''Test if add works '''    
-    assert add(2,2) == 4
+    '''Test 'addition' func result '''    
+    assert Calculator.add(2,2) == 4
 
 def test_subtraction():
-    '''Test if minus works '''    
-    assert subtract(2,2) == 0
+    '''Test 'subtraction' func result '''    
+    assert Calculator.subtract(2,2) == 0
 
 def test_multiply():
-    '''Test if multiply works '''
-    assert multiply(2,2) == 4
+    '''Test 'multiply' func result '''    
+    assert Calculator.multiply(2,2) == 4
 
 def test_divide():
-    '''Test if divide works '''    
-    assert divide(2,2) == 1
-
-def test_remainder():
-    '''Test if remainder works '''    
-    assert remainder(2,2) == 0
-    
+    '''Test 'divide' func result '''    
+    assert Calculator.divide(2,2) == 1
