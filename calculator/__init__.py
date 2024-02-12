@@ -1,5 +1,6 @@
 from calculator.calculation import Calculation
 from calculator.operations import add, subtract, multiply, divide
+from decimal import Decimal # Importing Decimal to typeforce 
 
 
 # Main calculator class
@@ -13,21 +14,21 @@ class Calculator:
     # Instance of Calculation-class is created, storing a,b,operation
     # THEN actual calculation is performed while returning
     @staticmethod
-    def add(a,b):
+    def add(a: Decimal, b: Decimal):
         calculation = Calculation(a, b, add)  
         return calculation.get_result()
     
     @staticmethod
-    def subtract(a,b):
+    def subtract(a: Decimal, b: Decimal):
         calculation = Calculation(a, b, subtract)  
         return calculation.get_result()
     
     @staticmethod
-    def multiply (a,b):
+    def multiply (a: Decimal, b: Decimal):
         calculation = Calculation(a, b, multiply)  
         return calculation.get_result()
     
     @staticmethod
-    def divide(a,b):
+    def divide(a: Decimal, b: Decimal):
         # Why not just do this? 
         return Calculation(a, b, divide).get_result()
