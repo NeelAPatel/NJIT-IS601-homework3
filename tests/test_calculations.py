@@ -2,7 +2,6 @@
 ''' This module will test at the Calculations level to test historical storage
 and retireval'''
 from decimal import Decimal
-from typing import Callable
 import pytest
 from calculator.calculation import Calculation
 from calculator.calculations import Calculations
@@ -29,15 +28,15 @@ def setup_calculations():
 
 def test_add_to_history(setup_calculations):
     """Test adding a calculation to the history."""
-    
+
     # single Calculation instance
     calc = Calculation(Decimal('2'), Decimal('2'), add)
     Calculations.add_to_history(calc)# Add to history
-    
+
     # test + fail mesasge
     assert Calculations.get_latest_calc() == calc, "Failed to add the calculation to the history"
 
-def test_get_latest_calc(setup_calculations): 
+def test_get_latest_calc(setup_calculations):
     ''' Tests the latest calculation retrieved'''
     latest_calc =  Calculations.get_latest_calc()
     assert latest_calc.a == Decimal('20') and latest_calc.b == Decimal('5'), "Failed to retrieve correct latest calculation"
@@ -52,10 +51,10 @@ def test_find_by_operation(setup_calculations):
     """Test searching calculations by requested operation"""
     # Search specifically for subtract
     add_operations = Calculations.find_by_operation("subtract")
-    
+
     # Test for exactly 2 calculations based on fixture
     assert len(add_operations) == 2, "Did not find the correct number of calculations with add operation"
-    
+
     # Search for multiply calcs
     multiply_operations = Calculations.find_by_operation("multiply")
     # Test for exactly 1 multiply calc based on fixture
