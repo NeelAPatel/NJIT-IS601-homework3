@@ -27,21 +27,21 @@ class Calculator:
     # Instance of Calculation-class is created, storing a,b,operation
     # THEN actual calculation is performed while returning
     @staticmethod
-    def add(a: Decimal, b: Decimal):
-        calculation = Calculation(a, b, add)  
-        return calculation.get_result()
+    def add(a: Decimal, b: Decimal) -> Decimal:
+        # Call current class's owon _perform_operation on add operation
+        return Calculator._perform_operation(a,b, add)
     
     @staticmethod
-    def subtract(a: Decimal, b: Decimal):
-        calculation = Calculation(a, b, subtract)  
-        return calculation.get_result()
+    def subtract(a: Decimal, b: Decimal) -> Decimal:
+        # Call current class's owon _perform_operation on subtract operation
+        return Calculator._perform_operation(a,b, subtract)
     
     @staticmethod
-    def multiply (a: Decimal, b: Decimal):
-        calculation = Calculation(a, b, multiply)  
-        return calculation.get_result()
+    def multiply (a: Decimal, b: Decimal) -> Decimal:
+        # Call current class's owon _perform_operation on multiply operation
+        return Calculator._perform_operation(a,b, multiply)
     
     @staticmethod
-    def divide(a: Decimal, b: Decimal):
-        # Why not just do this? 
-        return Calculation(a, b, divide).get_result()
+    def divide(a: Decimal, b: Decimal) -> Decimal:
+        # Call current class's owon _perform_operation on divide operation
+        return Calculator._perform_operation(a,b, divide)
