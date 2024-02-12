@@ -1,4 +1,4 @@
-# pylint: disable=unnecessary-dunder-call, invalid-name
+# pylint: disable=unnecessary-dunder-call, invalid-name, line-too-long
 ''' This module will test at the Calculations level to test historical storage
 and retireval'''
 from decimal import Decimal
