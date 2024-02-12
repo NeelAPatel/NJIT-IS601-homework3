@@ -12,27 +12,27 @@ from calculator.operations import add, multiply, subtract, divide
 
 def test_operation_addition():
     '''Test 'addition' operation itself '''
-    myCalc = Calculation(Decimal('20'), Decimal('5'), add )
-    assert myCalc.perform() == Decimal('25')
+    my_calc = Calculation(Decimal('20'), Decimal('5'), add )
+    assert my_calc.perform() == Decimal('25')
 
 def test_operation_subtraction():
     '''Test 'subtraction' operation itself '''
-    myCalc = Calculation(Decimal('20'), Decimal('5'), subtract )
-    assert myCalc.perform() == Decimal('15')
+    my_calc = Calculation(Decimal('20'), Decimal('5'), subtract )
+    assert my_calc.perform() == Decimal('15')
 
 def test_operation_multiplication():
     '''Test 'multiplication' operation itself '''
-    myCalc = Calculation(Decimal('20'), Decimal('5'), multiply )
-    assert myCalc.perform() == Decimal('100')
+    my_calc = Calculation(Decimal('20'), Decimal('5'), multiply )
+    assert my_calc.perform() == Decimal('100')
 
 def test_operation_division():
     '''Test 'division' operation itself '''
-    myCalc = Calculation(Decimal('20'), Decimal('5'), divide )
-    assert myCalc.perform() == Decimal('4')
+    my_calc = Calculation(Decimal('20'), Decimal('5'), divide )
+    assert my_calc.perform() == Decimal('4')
 
 def test_div_by_zero():
     '''Testing the divide by zero exception'''
     with pytest.raises(ValueError, match="Cannot divide by zero"):
-        myCalc = Calculation(Decimal('10'), Decimal('0'), divide)
-        myCalc.perform()
+        my_calc = Calculation(Decimal('10'), Decimal('0'), divide)
+        my_calc.perform()
     
