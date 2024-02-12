@@ -1,10 +1,23 @@
+from typing import Callable
 from calculator.calculation import Calculation
+from calculator.calculations import Calculations
 from calculator.operations import add, subtract, multiply, divide
 from decimal import Decimal # Importing Decimal to typeforce 
 
 
 # Main calculator class
 class Calculator:
+
+
+    @staticmethod
+    def _perform_operation(a: Decimal, b: Decimal, operation: Callable[[Decimal, Decimal], Decimal]) -> Decimal:
+        # create instance of a single calculation
+        myCalculation = Calculation.create(a,b, operation)
+
+        #using Calculation class itself bc we are doing it for the entire class
+        Calculations.add_to_history(myCalculation)
+        return myCalculation.perform()
+
 
     # @staticmethod = GLOBALLY accessible, does NOT have access to outside values/instance varibales
     # -- strict job is to take input vars => redirect. little to no calculation
